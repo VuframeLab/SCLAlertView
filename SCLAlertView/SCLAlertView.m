@@ -1161,6 +1161,18 @@ SCLTimerDisplay *buttonTimer;
 
 - (CGRect)mainScreenFrame
 {
+    if (_rootViewController) {
+        if ([_rootViewController respondsToSelector:@selector(alertViewBackgroundWidth)]) {
+            NSInvocationOperation *invo = [[NSInvocationOperation alloc] initWithTarget:_rootViewController selector:@selector(alertViewBackgroundWidth) object:nil];
+            [invo start];
+            CGFloat width = 0;
+            [invo.result getValue:&width];
+            CGRect rect = [UIApplication sharedApplication].keyWindow.bounds;
+            rect.size.width = width;
+            return rect;
+        }
+    }
+    
     return [self isAppExtension] ? _extensionBounds : [UIApplication sharedApplication].keyWindow.bounds;
 }
 
