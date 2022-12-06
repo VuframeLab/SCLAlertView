@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.2.1 unreleased
+
+* add: alertViewBackgroundWidth delegate method
+
+
 ## [1.1.4](https://github.com/dogo/SCLAlertView/tree/1.1.4) (2018-06-19)
 [Full Changelog](https://github.com/dogo/SCLAlertView/compare/1.1.3...1.1.4)
 
